@@ -27,6 +27,12 @@ class Window:
         self.root.update_idletasks()    # Handles pending tasks like resizing
         self.root.update()              # Redraws the window and all its content
 
+    def draw_line(self,line, fill_color='black'):
+        """
+        Draws a line on the canvas using a Line object and a fill color.
+        """
+        line.draw(self.canvas, fill_color)
+
     def wait_for_close(self):
         """
         Keeps the window running and continuosly redraws the window
