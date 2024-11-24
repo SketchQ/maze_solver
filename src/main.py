@@ -1,5 +1,6 @@
 from gui import Window
 from utils import Point, Line
+from maze_generator import Cell
 
 def main():
     # Create a window with 800x600 pixels
@@ -22,6 +23,24 @@ def main():
     win.draw_line(line2, fill_color="green")
     win.draw_line(line3, fill_color="blue")
     win.draw_line(line4, fill_color="yellow")
+
+    # Add Cell class testing
+    # Create cells
+    cell1 = Cell(400, 100, 500, 200, win.canvas)  # A cell at (400, 100) to (500, 200)
+    cell1.has_left_wall = False  # Remove the left wall
+    cell1.draw()  # Draw the first cell
+
+    cell2 = Cell(520, 100, 620, 200, win.canvas)  # A cell adjacent to the first
+    cell2.has_top_wall = False  # Remove the top wall
+    cell2.draw()  # Draw the second cell
+
+    cell3 = Cell(400, 220, 500, 320, win.canvas)  # A cell below the first
+    cell3.has_right_wall = False  # Remove the right wall
+    cell3.draw()  # Draw the third cell
+
+    cell4 = Cell(520, 220, 620, 320, win.canvas)  # A diagonal cell
+    cell4.has_bottom_wall = False  # Remove the bottom wall
+    cell4.draw()  # Draw the fourth cell
 
     # Wait for the window close
     win.wait_for_close()    
