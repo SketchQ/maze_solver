@@ -42,6 +42,12 @@ def main():
     cell4.has_bottom_wall = False  # Remove the bottom wall
     cell4.draw()  # Draw the fourth cell
 
+    # Draw a forward move between the two cells
+    cell1.draw_move(cell2, undo=False)
+
+    # Simulate backtracking
+    cell2.draw_move(cell1, undo=True)
+
     # Wait for the window close
     win.wait_for_close()    
 
